@@ -1106,4 +1106,53 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="appear" val="right"/>
     </comp>
   </circuit>
+  <circuit name="bit storage">
+    <a name="circuit" val="bit storage"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(450,340)" to="(480,340)"/>
+    <wire from="(420,320)" to="(450,320)"/>
+    <wire from="(400,320)" to="(420,320)"/>
+    <wire from="(250,360)" to="(300,360)"/>
+    <wire from="(290,320)" to="(290,330)"/>
+    <wire from="(400,340)" to="(400,380)"/>
+    <wire from="(320,350)" to="(320,370)"/>
+    <wire from="(320,310)" to="(330,310)"/>
+    <wire from="(450,320)" to="(450,340)"/>
+    <wire from="(360,310)" to="(370,310)"/>
+    <wire from="(360,370)" to="(370,370)"/>
+    <wire from="(320,370)" to="(330,370)"/>
+    <wire from="(290,330)" to="(370,330)"/>
+    <wire from="(320,340)" to="(400,340)"/>
+    <wire from="(420,320)" to="(420,350)"/>
+    <wire from="(320,350)" to="(420,350)"/>
+    <wire from="(320,310)" to="(320,340)"/>
+    <wire from="(300,360)" to="(300,390)"/>
+    <wire from="(250,320)" to="(290,320)"/>
+    <wire from="(300,390)" to="(370,390)"/>
+    <comp lib="0" loc="(480,340)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(360,370)" name="NOT Gate"/>
+    <comp lib="1" loc="(400,320)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(360,310)" name="NOT Gate"/>
+    <comp lib="0" loc="(250,320)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="store"/>
+    </comp>
+    <comp lib="0" loc="(250,360)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="reset"/>
+    </comp>
+    <comp lib="1" loc="(400,380)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+  </circuit>
 </project>
