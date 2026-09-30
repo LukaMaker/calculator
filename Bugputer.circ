@@ -53,35 +53,19 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(500,320)" to="(500,370)"/>
-    <wire from="(500,320)" to="(560,320)"/>
-    <wire from="(560,320)" to="(620,320)"/>
-    <wire from="(620,320)" to="(680,320)"/>
-    <wire from="(680,320)" to="(740,320)"/>
-    <wire from="(680,290)" to="(680,320)"/>
-    <wire from="(740,290)" to="(740,320)"/>
-    <wire from="(560,290)" to="(560,320)"/>
-    <wire from="(620,290)" to="(620,320)"/>
-    <wire from="(500,290)" to="(500,320)"/>
-    <wire from="(450,270)" to="(490,270)"/>
-    <wire from="(700,270)" to="(730,270)"/>
-    <wire from="(760,270)" to="(790,270)"/>
-    <wire from="(520,270)" to="(550,270)"/>
-    <wire from="(580,270)" to="(610,270)"/>
-    <wire from="(430,270)" to="(450,270)"/>
-    <wire from="(640,270)" to="(670,270)"/>
-    <comp loc="(640,270)" name="Toggle (11-Tick)"/>
-    <comp loc="(760,270)" name="Toggle (11-Tick)"/>
-    <comp lib="0" loc="(430,270)" name="Pin">
+    <comp loc="(370,270)" name="8-bit Counter (100-Tick)"/>
+    <comp lib="0" loc="(340,270)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="0" loc="(500,370)" name="Pin">
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(350,290)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp loc="(580,270)" name="Toggle (11-Tick)"/>
-    <comp loc="(700,270)" name="Toggle (11-Tick)"/>
-    <comp loc="(520,270)" name="Toggle (11-Tick)"/>
+    <comp lib="0" loc="(370,270)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="labelloc" val="east"/>
+    </comp>
   </circuit>
   <circuit name="Switch (4-Tick)">
     <a name="circuit" val="Switch (4-Tick)"/>
@@ -119,27 +103,27 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(220,290)" to="(230,290)"/>
     <wire from="(600,220)" to="(600,270)"/>
     <wire from="(310,220)" to="(380,220)"/>
-    <comp lib="1" loc="(280,280)" name="OR Gate"/>
-    <comp lib="1" loc="(540,270)" name="AND Gate"/>
+    <comp lib="0" loc="(300,220)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Input"/>
+    </comp>
+    <comp lib="1" loc="(360,300)" name="OR Gate"/>
     <comp lib="1" loc="(370,170)" name="OR Gate"/>
+    <comp lib="1" loc="(280,280)" name="OR Gate"/>
     <comp lib="1" loc="(390,300)" name="NOT Gate"/>
+    <comp lib="1" loc="(470,220)" name="OR Gate"/>
+    <comp lib="1" loc="(540,270)" name="AND Gate"/>
     <comp lib="0" loc="(640,220)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="Output"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(300,220)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Input"/>
-    </comp>
-    <comp lib="1" loc="(470,220)" name="OR Gate"/>
     <comp lib="0" loc="(270,360)" name="Pin">
       <a name="facing" val="north"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Reset"/>
     </comp>
-    <comp lib="1" loc="(360,300)" name="OR Gate"/>
   </circuit>
   <circuit name="Toggle (11-Tick)">
     <a name="circuit" val="Toggle (11-Tick)"/>
@@ -178,28 +162,121 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(400,160)" to="(480,160)"/>
     <wire from="(210,180)" to="(280,180)"/>
     <wire from="(270,220)" to="(340,220)"/>
-    <comp lib="0" loc="(240,220)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
     <comp lib="1" loc="(160,170)" name="NOT Gate"/>
-    <comp loc="(380,160)" name="Switch (4-Tick)"/>
     <comp lib="0" loc="(480,160)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(300,300)" name="Pin">
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(240,220)" name="Pin">
       <a name="tristate" val="false"/>
+      <a name="label" val="toggle"/>
     </comp>
-    <comp lib="1" loc="(440,100)" name="AND Gate"/>
     <comp lib="1" loc="(330,160)" name="AND Gate"/>
     <comp lib="1" loc="(520,100)" name="AND Gate"/>
     <comp lib="1" loc="(390,90)" name="NOT Gate"/>
+    <comp lib="0" loc="(300,300)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="reset"/>
+    </comp>
     <comp lib="1" loc="(360,180)" name="OR Gate">
       <a name="facing" val="west"/>
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
+    <comp lib="1" loc="(440,100)" name="AND Gate"/>
+    <comp loc="(380,160)" name="Switch (4-Tick)"/>
+  </circuit>
+  <circuit name="8-bit Counter (100-Tick)">
+    <a name="circuit" val="8-bit Counter (100-Tick)"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(970,170)" to="(1020,170)"/>
+    <wire from="(840,150)" to="(1020,150)"/>
+    <wire from="(430,270)" to="(490,270)"/>
+    <wire from="(500,320)" to="(560,320)"/>
+    <wire from="(650,120)" to="(1020,120)"/>
+    <wire from="(900,160)" to="(1020,160)"/>
+    <wire from="(720,130)" to="(720,270)"/>
+    <wire from="(800,320)" to="(860,320)"/>
+    <wire from="(780,140)" to="(780,270)"/>
+    <wire from="(860,320)" to="(920,320)"/>
+    <wire from="(560,320)" to="(620,320)"/>
+    <wire from="(620,320)" to="(680,320)"/>
+    <wire from="(680,320)" to="(740,320)"/>
+    <wire from="(740,320)" to="(800,320)"/>
+    <wire from="(920,290)" to="(920,320)"/>
+    <wire from="(800,290)" to="(800,320)"/>
+    <wire from="(860,290)" to="(860,320)"/>
+    <wire from="(680,290)" to="(680,320)"/>
+    <wire from="(600,110)" to="(1020,110)"/>
+    <wire from="(740,290)" to="(740,320)"/>
+    <wire from="(560,290)" to="(560,320)"/>
+    <wire from="(620,290)" to="(620,320)"/>
+    <wire from="(500,290)" to="(500,320)"/>
+    <wire from="(780,140)" to="(1020,140)"/>
+    <wire from="(530,100)" to="(1020,100)"/>
+    <wire from="(720,130)" to="(1020,130)"/>
+    <wire from="(650,120)" to="(650,270)"/>
+    <wire from="(820,270)" to="(840,270)"/>
+    <wire from="(880,270)" to="(900,270)"/>
+    <wire from="(530,100)" to="(530,270)"/>
+    <wire from="(900,160)" to="(900,270)"/>
+    <wire from="(580,270)" to="(600,270)"/>
+    <wire from="(530,270)" to="(550,270)"/>
+    <wire from="(650,270)" to="(670,270)"/>
+    <wire from="(700,270)" to="(720,270)"/>
+    <wire from="(760,270)" to="(780,270)"/>
+    <wire from="(600,110)" to="(600,270)"/>
+    <wire from="(970,170)" to="(970,270)"/>
+    <wire from="(940,270)" to="(970,270)"/>
+    <wire from="(840,150)" to="(840,270)"/>
+    <wire from="(500,320)" to="(500,370)"/>
+    <wire from="(840,270)" to="(850,270)"/>
+    <wire from="(900,270)" to="(910,270)"/>
+    <wire from="(780,270)" to="(790,270)"/>
+    <wire from="(720,270)" to="(730,270)"/>
+    <wire from="(520,270)" to="(530,270)"/>
+    <wire from="(640,270)" to="(650,270)"/>
+    <wire from="(600,270)" to="(610,270)"/>
+    <comp lib="1" loc="(1050,140)" name="NOT Gate"/>
+    <comp loc="(700,270)" name="Toggle (11-Tick)"/>
+    <comp lib="0" loc="(1070,90)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="0" loc="(1070,90)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="count"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(430,270)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="input"/>
+    </comp>
+    <comp lib="1" loc="(1050,150)" name="NOT Gate"/>
+    <comp loc="(940,270)" name="Toggle (11-Tick)"/>
+    <comp loc="(820,270)" name="Toggle (11-Tick)"/>
+    <comp lib="0" loc="(500,370)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="reset"/>
+    </comp>
+    <comp loc="(520,270)" name="Toggle (11-Tick)"/>
+    <comp loc="(640,270)" name="Toggle (11-Tick)"/>
+    <comp lib="1" loc="(1050,110)" name="NOT Gate"/>
+    <comp lib="1" loc="(1050,130)" name="NOT Gate"/>
+    <comp lib="1" loc="(1050,100)" name="NOT Gate"/>
+    <comp lib="1" loc="(1050,120)" name="NOT Gate"/>
+    <comp lib="1" loc="(1050,170)" name="NOT Gate"/>
+    <comp loc="(880,270)" name="Toggle (11-Tick)"/>
+    <comp lib="1" loc="(1050,160)" name="NOT Gate"/>
+    <comp loc="(760,270)" name="Toggle (11-Tick)"/>
+    <comp loc="(580,270)" name="Toggle (11-Tick)"/>
   </circuit>
 </project>
